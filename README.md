@@ -6,6 +6,7 @@
 index.rb 为样例代码，使用前请将相关参数修改为您个人小程序相关信息
 
 `pc = WXBizDataCrypt.new(app_id, session_key)`
+
 `puts pc.decrypt(encrypted_data, iv)`
 
 ```
