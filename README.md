@@ -20,3 +20,6 @@ $ ruby index.rb
 {"openId"=>"oPXsJ0XRxxxT-EC73Vm5B0aug", "nickName"=>"wayde", "gender"=>1, "language"=>"en", "city"=>"Wuhan", "province"=>"Hubei", "country"=>"CN", "avatarUrl"=>"http://wx.qlogo.cn/mmopen/vi_32/PiajxSqBRaExxxKfbEfNEquYYiaK8mhXLliaQA29cicl7Vf6mhoWuNllXh6er94K1kLCJkce6W1LJUuSPp2g/0", "watermark"=>{"timestamp"=>1488876922, "appid"=>"wx7ecxxx9398"}}
 
 ```
+
+
+[有其它问题欢迎交流](mailto:wayde.sun@gmail.com?Subject=WxChat little program%20Text&Body=Thank%20you)
