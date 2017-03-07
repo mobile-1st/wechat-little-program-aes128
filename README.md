@@ -9,10 +9,6 @@ index.rb 为样例代码，使用前请将相关参数修改为您个人小程�
 
 `puts pc.decrypt(encrypted_data, iv)`
 
-```
-$ ruby index.rb
-```
-
 ### 解析JSON结果
 
 ```
