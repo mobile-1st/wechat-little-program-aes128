@@ -23,3 +23,11 @@ http://www.jsoneditoronline.cn/
 ![JSON](./json.png)
 
 [有其它问题欢迎交流](mailto:wayde.sun@gmail.com?Subject=WxChat little program%20Text&Body=Thank%20you)
+
+### 关于unionid的补充说明
+
+有朋友问到为什么我这解析的没有unionid？
+
+这是因为微信官网无法真视的规定：如果你的小程序没有和你的已经通过官方认证了的公从号绑定，那么这里不给你返回unionid!!!
+
+![WTF](./wtf.jpeg)
