@@ -24,7 +24,7 @@ class WXBizDataCrypt
     cipher.padding = 0
 
     decrypted_plain_text = cipher.update(encrypted_data) + cipher.final
-    decrypted = JSON.parse(decrypted_plain_text.strip)
+    decrypted = JSON.parse(decrypted_plain_text.strip.gsub(/\u000f|\u0010/, ''))
     raise('Invalid Buffer') if decrypted['watermark']['appid'] != @app_id
 
     decrypted

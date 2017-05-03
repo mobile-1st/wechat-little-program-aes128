@@ -31,3 +31,36 @@ http://www.jsoneditoronline.cn/
 这是因为微信官网无法真视的规定：如果你的小程序没有和你的已经通过官方认证了的公从号绑定，那么这里不给你返回unionid!!!
 
 ![WTF](./wtf.jpeg)
+
+### 补充
+
+经测试可正常工作的去除解密后特殊字符的源码
+
+```
+# encoding: utf-8
+decrypted_plain_text = File.read('./000/0007.json')
+
+decrypted_plain_text = decrypted_plain_text.gsub(/[\u0000-\u001F\u2028\u2029]/, '')
+p decrypted_plain_text
+last_letter = decrypted_plain_text[decrypted_plain_text.length - 1]
+if last_letter != '}'
+  bracket_index = (0 ... decrypted_plain_text.length).find_all { |i| decrypted_plain_text[i,1] == '}' }
+  p bracket_index
+  last_bracket_index = bracket_index[bracket_index.length - 1]
+  p last_bracket_index
+  decrypted_plain_text = decrypted_plain_text[0, last_bracket_index + 1]
+end
+
+File.open('./111.json', 'w') { |file| file.write(decrypted_plain_text) }
+```
+
+生产环境和开发环境的差别
+
+```
+# ruby 2.1.2p95 (2014-05-08 revision 45877) [x86_64-linux]
+# not work!!
+# decrypted_plain_text = decrypted_plain_text.strip.gsub(/[\u0000-\u001F\u2028\u2029]/, '')
+# ruby 2.1.1p76 (2014-02-24 revision 45161) [x86_64-darwin12.0]
+# works!!
+
+```
